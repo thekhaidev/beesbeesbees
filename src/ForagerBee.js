@@ -10,5 +10,7 @@ var ForagerBee = function() {
   ForagerBee.prototype.forage = function() {
     this.treasureChest.push('treasure');
   };
+
+  _.extend(ForagerBee.prototype, this);
 };
 
