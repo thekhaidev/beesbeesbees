@@ -4,14 +4,16 @@ var RetiredForagerBee = function() {
   this.job = 'gamble';
   this.canFly = false;
   this.color = 'grey';
-  RetiredForagerBee.prototype.forage = () => 'I am too old, let me play cards instead';
   this.food = Grub.prototype.food;
-  RetiredForagerBee.prototype.eat = Grub.prototype.eat;
+
   this.treasureChest = ForagerBee.prototype.treasureChest;
-  RetiredForagerBee.prototype.gamble = function() {
-    this.treasureChest.push('treasure');
-  };
+
 
   _.extend(ForagerBee.prototype, this);
 };
 
+RetiredForagerBee.prototype.gamble = function() {
+  this.treasureChest.push('treasure');
+};
+
+RetiredForagerBee.prototype.eat = Grub.prototype.eat;

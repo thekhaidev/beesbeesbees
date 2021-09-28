@@ -4,13 +4,15 @@ var ForagerBee = function() {
   this.job = 'find pollen';
   this.color = Bee.prototype.color;
   this.food = Grub.prototype.food;
-  ForagerBee.prototype.eat = Grub.prototype.eat;
   this.canFly = true;
   this.treasureChest = [];
-  ForagerBee.prototype.forage = function() {
-    this.treasureChest.push('treasure');
-  };
+
 
   _.extend(ForagerBee.prototype, this);
 };
 
+ForagerBee.prototype.forage = function() {
+  this.treasureChest.push('treasure');
+};
+
+ForagerBee.prototype.eat = Grub.prototype.eat;
